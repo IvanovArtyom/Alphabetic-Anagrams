@@ -35,7 +35,9 @@ public class Kata
             if (count == 0)
                 continue;
 
-            int[] keyCount = value[(i + 1)..].Distinct().Select(c => value[i..].Count(x => x == c)).ToArray();
+            int[] keyCount = value[(i + 1)..].Distinct().
+                Select(c => value[i..].Count(x => x == c)).ToArray();
+
             position += count * CountPermutationsWithRepetitions(keyCount, value.Length - i - 1);
         }
 
